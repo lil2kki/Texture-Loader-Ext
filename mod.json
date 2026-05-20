@@ -8,7 +8,7 @@
 	},
 	"id": "lil2kki.texture-loader-ext",
 	"name": "Texture Loader Ext",
-	"version": "v1.0.0",
+	"version": "v1.0.0-beta.1",
 	"developers": [ "lil2kki" ],
 	"description": "Integrates more features into Texture Loader",
 	"tags": [ "developer", "interface", "utility" ],

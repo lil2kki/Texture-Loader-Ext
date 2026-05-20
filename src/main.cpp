@@ -202,24 +202,24 @@ class $baseModify(PackSelectPopupExt, PackSelectPopup) {
             "Cancel", "Create", [=](bool a) {
                 if (!a) return; // Cancel
                 auto mod = Loader::get()->getInstalledMod("geode.texture-loader");
-				auto wd = mod->getConfigDir() / "packs" / ID->getString();
+				auto wd = mod->getConfigDir() / "packs" / ID->getString().c_str();
                 std::error_code err;
                 std::filesystem::create_directories(wd, err);
                 //pack.json
                 auto json = matjson::Value();
-				json["textureldr"] = mod->getVersion().toNonVString();
+				json["textureldr"] = mod->getVersion().toNonVString().c_str();
 				json["name"] = Name->getString().c_str();
-				json["authors"] = matjson::parse("[" + Authors->getString() + "]").unwrapOrDefault();
+                json["authors"] = matjson::parse("[" + std::string(Authors->getString().c_str()) + "]").unwrapOrDefault();
                 if (!json["authors"].size() or !json["authors"].isArray()) {
                     auto authors = matjson::Value().array();
-                    authors.push(Authors->getString());
+                    authors.push(Authors->getString().c_str());
                     json["authors"] = authors;
                 }
 				json["id"] = ID->getString().c_str();
 				json["version"] = Version->getString().c_str();
                 file::writeToJson(wd / "pack.json", json);
                 //logo.png
-                std::filesystem::copy_file(icon->getID(), wd / "pack.png", err);
+                std::filesystem::copy_file(icon->getID().c_str(), wd / "pack.png", err);
                 //xd
                 reloadPacks();
             }
