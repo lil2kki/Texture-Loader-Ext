@@ -98,13 +98,14 @@ class $baseModify(PackNodeExt, PackNode) {
 
         popup->show();
 
-        for (auto name : filenames) CCFileUtils::get()->m_fullPathCache.erase(name);
-
         CCSpriteFrameCache::get()->removeSpriteFramesFromFile("GJ_GameSheet03.plist"); //remove loaded
-        CCSpriteFrameCache::get()->addSpriteFramesWithFile("GJ_GameSheet03.plist"); //add temp ones
+        CCSpriteFrameCache::get()->removeSpriteFramesFromFile("GJ_GameSheet04.plist"); //remove loaded
 
+        for (auto name : filenames) CCFileUtils::get()->m_fullPathCache.erase(name);
         CCFileUtils::get()->removeTexturePack(tempPack.m_id);
 
+        CCSpriteFrameCache::get()->addSpriteFramesWithFile("GJ_GameSheet03.plist"); //restore
+        CCSpriteFrameCache::get()->addSpriteFramesWithFile("GJ_GameSheet04.plist"); //restore
 	}
     void modify() {
         auto button = typeinfo_cast<CCMenuItemSpriteExtra*>(querySelector("pack-name-button"));
