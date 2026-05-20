@@ -1,0 +1,25 @@
+{
+	"geode": "5.7.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "lil2kki.texture-loader-ext",
+	"name": "Texture Loader Ext",
+	"version": "v1.0.0",
+	"developers": [ "lil2kki" ],
+	"description": "Integrates more features into Texture Loader",
+	"tags": [ "developer", "interface", "utility" ],
+	"links": {
+		"community": "https://discord.gg/kXjQ8QEWNU",
+		"homepage": "https://t.me/lil2kki_ch",
+		"source": "https://github.com/lil2kki/Texture-Loader-Ext"
+	},
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3",
+		"geode.texture-loader": ">=v1.10.2",
+		"alphalaneous.alphas_geode_utils": ">=v1.2.5"
+	}
+}

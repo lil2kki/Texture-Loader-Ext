@@ -1,0 +1,1 @@
+tell me how to die bypassing scare
