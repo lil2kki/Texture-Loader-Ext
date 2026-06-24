@@ -93,7 +93,7 @@ class $baseModify(PackNodeExt, PackNode) {
             }
         );
 
-		GameManager::get()->fadeInMusic("menuloop.mp3");
+		GameManager::get()->fadeInMusic("menuLoop.mp3");
         popup->addOnExitCallback([] { GameManager::get()->fadeInMenuMusic(); });
 
         popup->show();
